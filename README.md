@@ -1,2 +1,2 @@
 # pin-bpf-seccomp
-research from senior year
+Research from senior year with Vasileios Kemerlis.
