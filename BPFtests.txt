@@ -1,0 +1,151 @@
+BPF Test cases
+                fprintf(stdout, "K = %d\n", K);
+                fprintf(stdout, "X = %d\n", X);
+                fprintf(stdout, "A = %d\n", A);
+                fprintf(stdout, "fentry:%p---------\n", fentry);
+
+
+        /* Modify X within sk_run_filter function.
+         * Modify k when initializing BPF instruction
+         * to modify K which is fentry->k
+         */
+        {BPF_S_ALU_ADD_X, 0, 0, 0},
+        {BPF_S_ALU_ADD_K, 0, 0, 2},
+        {BPF_S_ALU_SUB_X, 0, 0, 0},
+        {BPF_S_ALU_SUB_K, 0, 0, 0},
+        {BPF_S_RET_K, 0, 0, 0},
+        {BPF_S_RET_A, 0, 0, 0}
+
+
+
+
+static inline uint64_t *loadpointer(seccomp_data_t *seccomp, uint64_t k, uint64_t size)
+{
+     //(const void *)seccomp;
+     seccomp_data_t **secptr = &seccomp;
+     uint64_t *result;
+
+     result = ((uint64_t *)((ptrdiff_t)secptr + k));
+     return result;
+     //memcpy(&A, *secptr, 4);
+}
+
+unsigned int sk_run_filter(seccomp_data_t *seccomp, const struct sock_filter *fentry)
+{
+    uint64_t *ptr; //changed from void tp uint64_t
+    uint32_t A = 1;
+    uint32_t X = 2;
+    uint32_t mem[BPF_MEMWORDS];
+//    uint32_t tmp;
+    uint64_t k;
+
+
+
+
+
+        case BPF_S_LD_W_ABS:
+                k = K;
+             ptr = loadpointer(seccomp, k, 4);
+             if (ptr != NULL) {
+                     A = *ptr;
+                     continue;
+             }
+             return 0;
+
+
+
+
+
+
+Test case1:
+
+    uint32_t A = 12;
+    uint32_t X = 4;
+        {BPF_S_ALU_NEG, 0, 0, 0},
+        {BPF_S_ALU_DIV_K, 0, 0, 5},
+        {BPF_S_ALU_DIV_X, 0, 0, 0},
+        {BPF_S_RET_K, 0, 0, 0},
+        {BPF_S_RET_A, 0, 0, 0}
+
+Test case2:
+
+    uint32_t A = 12;
+    uint32_t X = 4;
+        {BPF_S_ALU_ADD_X, 0, 0, 0},
+        {BPF_S_ALU_DIV_X, 0, 0, 0},
+        {BPF_S_RET_K, 0, 0, 0},
+        {BPF_S_RET_A, 0, 0, 0}
+
+Test case3:
+
+    uint32_t A = 2;
+    uint32_t X = 4;
+        {BPF_S_ST, 0, 0, 0},
+        {BPF_S_STX, 0, 0, 0},
+        {BPF_S_ST, 0, 0, 1},
+        {BPF_S_STX, 0, 0, 1},
+       // {BPF_S_ALU_ADD_X, 0, 0, 0},
+       // {BPF_S_ALU_AND_K, 0, 0, 1},
+       // {BPF_S_ALU_AND_X, 0, 0, 0},
+        {BPF_S_RET_K, 0, 0, 0},
+        {BPF_S_RET_A, 0, 0, 0}
+
+Test case4:
+
+    uint32_t A = 4;
+    uint32_t X = 1;
+        {BPF_S_ALU_LSH_K, 0, 0, 1},
+        {BPF_S_ALU_LSH_X, 0, 0, 0},
+        {BPF_S_ALU_RSH_K, 0, 0, 1},
+        {BPF_S_ALU_RSH_X, 0, 0, 0},
+       // {BPF_S_ALU_ADD_X, 0, 0, 0},
+       // {BPF_S_ALU_AND_K, 0, 0, 1},
+       // {BPF_S_ALU_AND_X, 0, 0, 0},
+        {BPF_S_RET_K, 0, 0, 0},
+        {BPF_S_RET_A, 0, 0, 0}
+
+Test case5:
+
+    uint32_t A = 1;
+    uint32_t X = 2;
+        {BPF_S_ST, 0, 0, 0},
+        {BPF_S_STX, 0, 0, 1},
+        {BPF_S_ALU_ADD_X, 0, 0, 0},
+        {BPF_S_LD_MEM, 0, 0, 0},
+        {BPF_S_LDX_MEM, 0, 0, 1},
+       // {BPF_S_ALU_ADD_X, 0, 0, 0},
+       // {BPF_S_ALU_AND_K, 0, 0, 1},
+       // {BPF_S_ALU_AND_X, 0, 0, 0},
+        {BPF_S_RET_K, 0, 0, 0},
+        {BPF_S_RET_A, 0, 0, 0}
+
+
+Test case for LD ABS
+     seccomp_data_t *secptr = seccomp;
+     uint32_t offset = k + size;
+     uint32_t *result;
+
+     result = ((uint32_t *)((ptrdiff_t)secptr + offset));
+     fprintf(stdout, "offset:%d\n", offset);
+     //fprintf(stdout, "secptr:%lu\n", **secptr);
+     fprintf(stdout, "result:%d\n", *result);
+     return result;
+
+K = 0; Gives arch
+K = 4; Gives instruction_pointer
+K = 12; Gives args [0]
+K = 20; Gives args [1]
+K = 28; Gives args [2]
+K = 36; Gives args [3]
+K = 44; Gives args [4]
+K = 52; Gives args [5]
+
+
+
+
+
+
+
+
+
+

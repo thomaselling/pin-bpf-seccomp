@@ -1,0 +1,176 @@
+call PIN_AddSyscallEntryFunction
+call PIN_AddSyscallExitFunction
+call PIN_StartProgram()
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+INFO: (from syscallentry)seccomp.nr = 157
+INFO: AFTER SETSYSCALL seccomp.nr = 39
+
+hashmap contains: 0:1
+INFO: EXIT syscallEntry
+threadid 0 is true
+INFO: REG_GAX = 22005
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+prctl(NO_NEW_PRIVS): Success
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+threadid 0 is false
+INFO: EXIT syscallExit
+
+hashmap contains: 0:0
+INFO: EXIT syscallEntry
+
